@@ -1,7 +1,9 @@
 name: Build and Deploy
 
 on: [push]
-
+permissions:
+      id-token: write
+      contents: read
 env:
   AZURE_AKS_CLUSTER: myaksclustername
   AKS_RESOURCE_GROUP: myaksresourcegroup

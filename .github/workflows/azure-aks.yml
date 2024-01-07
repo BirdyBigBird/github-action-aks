@@ -7,7 +7,7 @@ permissions:
 env:
   AZURE_AKS_CLUSTER: myaksclustername
   AKS_RESOURCE_GROUP: myaksresourcegroup
-  ACR_RESOURCE_URI: myregistry.azurecr.io
+  ACR_RESOURCE_URI: myregistry1904.azurecr.io
 
 jobs:
   build:

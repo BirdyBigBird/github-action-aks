@@ -25,12 +25,12 @@ jobs:
       run: |
         dotnet tool install -g Microsoft.Tye --version "0.4.0-alpha.20371.1"
 
-    # - name: 🔐 Login to ACR
-    #   uses: Azure/docker-login@v1  
-    #   with:  
-    #     login-server: ${{ env.ACR_RESOURCE_URI }}
-    #     username: ${{ secrets.ACR_USER }}  
-    #     password: ${{ secrets.ACR_PASSWORD }}
+    - name: 🔐 Login to ACR
+      uses: Azure/docker-login@v1  
+      with:  
+        login-server: ${{ env.ACR_RESOURCE_URI }}
+        username: ${{ secrets.ACR_USER }}  
+        password: ${{ secrets.ACR_PASSWORD }}
 
     # - name: 📃 Set AKS context
     #   uses: azure/aks-set-context@v1

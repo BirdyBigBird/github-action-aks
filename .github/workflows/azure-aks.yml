@@ -16,33 +16,33 @@ jobs:
     - name: ✔ Checkout
       uses: actions/checkout@v2
 
-    - name: 🧰 Setup .NET Core
-      uses: actions/setup-dotnet@v1.5.0
-      with:
-        dotnet-version: 3.1.300
+    # - name: 🧰 Setup .NET Core
+    #   uses: actions/setup-dotnet@v1.5.0
+    #   with:
+    #     dotnet-version: 3.1.300
 
-    - name: 🛠 Install Tye tools
-      run: |
-        dotnet tool install -g Microsoft.Tye --version "0.4.0-alpha.20371.1"
+    # - name: 🛠 Install Tye tools
+    #   run: |
+    #     dotnet tool install -g Microsoft.Tye --version "0.4.0-alpha.20371.1"
 
-    - name: 🔐 Login to ACR
-      uses: Azure/docker-login@v1  
-      with:  
-        login-server: ${{ env.ACR_RESOURCE_URI }}
-        username: ${{ secrets.ACR_USER }}  
-        password: ${{ secrets.ACR_PASSWORD }}
+    # - name: 🔐 Login to ACR
+    #   uses: Azure/docker-login@v1  
+    #   with:  
+    #     login-server: ${{ env.ACR_RESOURCE_URI }}
+    #     username: ${{ secrets.ACR_USER }}  
+    #     password: ${{ secrets.ACR_PASSWORD }}
 
-    - name: 📃 Set AKS context
-      uses: azure/aks-set-context@v1
-      with:
-        creds: '${{ secrets.AZURE_CREDENTIALS }}'
-        cluster-name: ${{ env.AZURE_AKS_CLUSTER }}
-        resource-group: ${{ env.AKS_RESOURCE_GROUP }}
+    # - name: 📃 Set AKS context
+    #   uses: azure/aks-set-context@v1
+    #   with:
+    #     creds: '${{ secrets.AZURE_CREDENTIALS }}'
+    #     cluster-name: ${{ env.AZURE_AKS_CLUSTER }}
+    #     resource-group: ${{ env.AKS_RESOURCE_GROUP }}
 
-    - name: 🌐 Install ingress-nginx
-      run: |
-        kubectl apply -f https://aka.ms/tye/ingress/deploy
+    # - name: 🌐 Install ingress-nginx
+    #   run: |
+    #     kubectl apply -f https://aka.ms/tye/ingress/deploy
 
-    - name: ☸ tye deploy
-      run: |
-        tye deploy -v Debug
+    # - name: ☸ tye deploy
+    #   run: |
+    #     tye deploy -v Debug

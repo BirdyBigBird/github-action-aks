@@ -26,6 +26,11 @@ jobs:
     - name: 🛠 Install Tye tools
       run: |
         dotnet tool install -g Microsoft.Tye --version "0.4.0-alpha.20371.1"
+    
+    - name: Log in with Azure
+      uses: azure/login@v1
+      with:
+        creds: '${{ secrets.AZURE_CREDENTIALS }}'
 
     # - name: 🔐 Login to ACR
     #   uses: Azure/docker-login@v1  

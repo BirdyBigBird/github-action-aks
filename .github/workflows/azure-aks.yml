@@ -34,10 +34,10 @@ jobs:
         username: ${{ secrets.ACR_USER }}  
         password: ${{ secrets.ACR_PASSWORD }}
 
-    - name: 📃 Set AKS context
-    - uses: azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
+    # - name: 📃 Set AKS context
+    # - uses: azure/login@v1
+    #   with:
+    #     creds: ${{ secrets.AZURE_CREDENTIALS }}
       
     # - uses: azure/aks-set-context@v3
     #   with:
